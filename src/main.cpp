@@ -1,3 +1,5 @@
+// src/main.cpp
+
 #include <SDL.h>
 #include "Game.h"
 
@@ -10,6 +12,7 @@ int main(int argc, char** argv) {
     game.handleEvents();
     game.update();
     game.render();
+    SDL_Delay(1);
   }
 
   game.clean();

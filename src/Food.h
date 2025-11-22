@@ -1,3 +1,5 @@
+// src/Food.h
+
 #pragma once
 #include <SDL.h>
 #include <vector>

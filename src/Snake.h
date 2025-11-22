@@ -1,3 +1,5 @@
+// src/Snake.h
+
 #pragma once
 #include <vector>
 #include <SDL.h>
