@@ -3,8 +3,8 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-
 #include <vector>
+#include "Config.hpp"
 
 struct Segment
 {
@@ -30,4 +30,5 @@ private:
   std::vector<Segment> segments;
   sf::Vector2i direction;
   bool growNext;
+  float speed;
 };
