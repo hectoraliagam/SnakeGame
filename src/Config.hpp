@@ -17,5 +17,5 @@ namespace Config
   // ===== Snake =====
   inline constexpr int START_X = 10;
   inline constexpr int START_Y = 10;
-  inline constexpr float SNAKE_SPEED = 0.1f;
+  inline constexpr float SNAKE_SPEED = 0.05f;
 }
