@@ -3,6 +3,8 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "Snake.hpp"
+#include "Config.hpp"
 
 class Game
 {
@@ -18,4 +20,6 @@ private:
 
 private:
   sf::RenderWindow window;
+  Snake snake;
+  sf::RectangleShape segmentShape;
 };
