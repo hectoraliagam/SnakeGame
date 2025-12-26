@@ -1,0 +1,73 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Debug (SFML)",
+      "type": "shell",
+      "command": "C:\\mingw64\\bin\\g++.exe",
+      "args": [
+        "-std=gnu++17",
+        "-g",
+        "-O0",
+        "-DDEBUG",
+        "-IC:\\SFML-3.0.2\\include",
+        "src\\*.cpp",
+        "-LC:\\SFML-3.0.2\\lib",
+        "-lsfml-graphics",
+        "-lsfml-window",
+        "-lsfml-system",
+        "-lsfml-audio",
+        "-lopengl32",
+        "-lfreetype",
+        "-lgdi32",
+        "-lwinmm",
+        "-o",
+        "bin\\app_debug.exe"
+      ],
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    },
+
+    {
+      "label": "Build Release (SFML)",
+      "type": "shell",
+      "command": "C:\\mingw64\\bin\\g++.exe",
+      "args": [
+        "-std=gnu++17",
+        "-O2",
+        "-DNDEBUG",
+        "-IC:\\SFML-3.0.2\\include",
+        "src\\*.cpp",
+        "-LC:\\SFML-3.0.2\\lib",
+        "-lsfml-graphics",
+        "-lsfml-window",
+        "-lsfml-system",
+        "-lsfml-audio",
+        "-lopengl32",
+        "-lfreetype",
+        "-lgdi32",
+        "-lwinmm",
+        "-o",
+        "bin\\app_release.exe"
+      ],
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    },
+
+    {
+      "label": "Build + Run Debug (SFML)",
+      "type": "shell",
+      "command": "bin\\app_debug.exe",
+      "dependsOn": "Build Debug (SFML)",
+      "group": "test"
+    },
+
+    {
+      "label": "Build + Run Release (SFML)",
+      "type": "shell",
+      "command": "bin\\app_release.exe",
+      "dependsOn": "Build Release (SFML)",
+      "group": "test"
+    }
+  ]
+}
