@@ -1,20 +1,10 @@
-// src/main.cpp
+// ===== main.cpp =====
 
-#include <SDL.h>
-#include "Game.h"
+#include "Game.hpp"
 
-int main(int argc, char** argv) {
-  Game game("Snake", 640, 480);
-
-  if (!game.init()) return 1;
-
-  while (game.isRunning()) {
-    game.handleEvents();
-    game.update();
-    game.render();
-    SDL_Delay(1);
-  }
-
-  game.clean();
+int main()
+{
+  Game app;
+  app.run();
   return 0;
 }
