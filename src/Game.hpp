@@ -22,4 +22,6 @@ private:
   sf::RenderWindow window;
   Snake snake;
   sf::RectangleShape segmentShape;
+  sf::Clock clock;
+  sf::Time elapsedTime;
 };
