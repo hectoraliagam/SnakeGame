@@ -1,11 +1,12 @@
 // ===== Snake.cpp =====
 
 #include "Snake.hpp"
+#include "Config.hpp"
 
 Snake::Snake()
-    : direction{1, 0}, growNext(false)
+    : direction{1, 0}, growNext(false), speed(Config::SNAKE_SPEED)
 {
-  segments.push_back({{10, 10}});
+  segments.push_back({{Config::START_X, Config::START_Y}});
 }
 
 void Snake::move()
@@ -39,7 +40,7 @@ bool Snake::checkCollision() const
 
   const sf::Vector2i &head = segments.front().position;
 
-  return head.x < 0 || head.y < 0 || head.x >= 30 || head.y >= 30;
+  return head.x < 0 || head.y < 0 || head.x >= Config::GRID_WIDTH || head.y >= Config::GRID_HEIGHT;
 }
 
 bool Snake::checkSelfCollision() const
