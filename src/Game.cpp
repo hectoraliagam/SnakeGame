@@ -74,11 +74,16 @@ void Game::processEvents()
 
 void Game::update()
 {
-  snake.move();
+  elapsedTime = clock.getElapsedTime();
 
-  if (snake.checkCollision() || snake.checkSelfCollision())
+  if (elapsedTime.asSeconds() >= Config::SNAKE_SPEED)
   {
-    reset();
+    snake.move();
+    clock.restart();
+
+    if (snake.checkCollision() ||
+        snake.checkSelfCollision())
+      reset();
   }
 }
 
@@ -101,4 +106,5 @@ void Game::render()
 void Game::reset()
 {
   snake = Snake();
+  clock.restart();
 }
